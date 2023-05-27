@@ -1,0 +1,11 @@
+package org.tryclass;
+
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+public class ITProva {
+    @Test
+    void demoTestMethod() {
+        assertTrue(true);
+    }
+}

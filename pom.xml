@@ -73,6 +73,10 @@
           <artifactId>maven-surefire-plugin</artifactId>
           <version>3.1.0</version>
           <configuration>
+            <argLine>
+              -javaagent:/home/matteo/IdeaProjects/test-jacoco/jars/ba-dua-agent-rt-0.4.0-all.jar
+              -Xbootclasspath/p:/home/matteo/IdeaProjects/test-jacoco/jars/ba-dua-agent-rt-0.4.0-all.jar
+            </argLine>
             <redirectTestOutputToFile>true</redirectTestOutputToFile>
             <encoding>utf-8</encoding>
             <runOrder>alphabetical</runOrder>

@@ -79,7 +79,7 @@
           <version>3.1.0</version>
           <configuration>
             <argLine>
-              -javaagent:/home/matteo/IdeaProjects/test-jacoco/jars/ba-dua-agent-rt-0.4.0-all.jar
+              @{argLine} -javaagent:/home/matteo/IdeaProjects/test-jacoco/jars/ba-dua-agent-rt-0.4.0-all.jar
               -Xbootclasspath/p:/home/matteo/IdeaProjects/test-jacoco/jars/ba-dua-agent-rt-0.4.0-all.jar
             </argLine>
             <redirectTestOutputToFile>true</redirectTestOutputToFile>
@@ -109,20 +109,20 @@
           </execution>
         </executions>
       </plugin>
-    <!--Added by Ella-->
-    <plugin>
-      <groupId>org.jacoco</groupId>
-      <artifactId>jacoco-maven-plugin</artifactId>
-      <version>0.8.5</version>
-      <executions>
-        <execution>
-          <id>prepare-agent</id>
-          <goals>
-            <goal>prepare-agent</goal>
-          </goals>
-        </execution>
-      </executions>
-    </plugin>
+      <!--Added by Ella-->
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <version>0.8.5</version>
+        <executions>
+          <execution>
+            <id>prepare-agent</id>
+            <goals>
+              <goal>prepare-agent</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>exec-maven-plugin</artifactId>

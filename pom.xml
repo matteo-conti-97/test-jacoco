@@ -1,5 +1,5 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.example</groupId>
@@ -73,10 +73,6 @@
           <artifactId>maven-surefire-plugin</artifactId>
           <version>3.1.0</version>
           <configuration>
-            <argLine>
-              -javaagent:/home/matteo/IdeaProjects/test-jacoco/jars/ba-dua-agent-rt-0.4.0-all.jar
-              -Xbootclasspath/p:/home/matteo/IdeaProjects/test-jacoco/jars/ba-dua-agent-rt-0.4.0-all.jar
-            </argLine>
             <redirectTestOutputToFile>true</redirectTestOutputToFile>
             <encoding>utf-8</encoding>
             <runOrder>alphabetical</runOrder>
@@ -104,20 +100,20 @@
           </execution>
         </executions>
       </plugin>
-    <!--Added by Ella-->
-    <plugin>
-      <groupId>org.jacoco</groupId>
-      <artifactId>jacoco-maven-plugin</artifactId>
-      <version>0.8.5</version>
-      <executions>
-        <execution>
-          <id>prepare-agent</id>
-          <goals>
-            <goal>prepare-agent</goal>
-          </goals>
-        </execution>
-      </executions>
-    </plugin>
+      <!--Added by Ella-->
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <version>0.8.5</version>
+        <executions>
+          <execution>
+            <id>prepare-agent</id>
+            <goals>
+              <goal>prepare-agent</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
     </plugins>
   </build>
 

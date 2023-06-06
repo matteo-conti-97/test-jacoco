@@ -48,6 +48,11 @@
       <version>5.8.2</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>ba-dua</groupId>
+      <artifactId>ba-dua-cli</artifactId>
+      <version>0.4.0</version>
+    </dependency>
   </dependencies>
 
   <build>
@@ -118,6 +123,32 @@
         </execution>
       </executions>
     </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>1.5.0</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>java</goal>
+            </goals>
+            <phase>verify</phase>
+            <configuration>
+              <mainClass>br.usp.each.saeg.badua.cli.Report</mainClass>
+              <arguments>
+                <argument>-input</argument>
+                <argument>${maven.multiModuleProjectDirectory}/src-test-jacoco/coverage.ser</argument>
+                <argument>-classes</argument>
+                <argument>${maven.multiModuleProjectDirectory}/tests</argument>
+                <argument>-show-classes</argument>
+                <argument>-show-methods</argument>
+                <argument>-xml</argument>
+                <argument>${maven.multiModuleProjectDirectory}/src-test-jacoco/badua.xml</argument>
+              </arguments>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
     </plugins>
   </build>
 
